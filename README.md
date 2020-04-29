@@ -21,5 +21,18 @@ Colors are from [Material Design Palette](https://materialuicolors.co/), and I u
 3. 200 for Border
 4. Black for Shadows
 
-# TODO - Bugs
-Small sizes are missing, so it doesn't look good with rest Adwaita folders, but at least work with largest size on Nautilus List view :)
+# Scripts
+*folders.svg* and *render-icon-theme.py* are copied from [GNOME Adwaita icon theme](https://gitlab.gnome.org/GNOME/adwaita-icon-theme)
+
+*gen-color-folders.sh* can be use to generate new *folders.svg* with the 20 additional colors. The files are created under *src/fullcolor* and the directory will be created from the the active directory if it doesn't already exists.
+```
+./gen-color-folders.sh
+```
+Then, use *render-icon-theme.py* to render all PNG icons (it takes a while):
+```
+./render-icon-theme.py
+```
+You can also render only one color:
+```
+./render-icon-theme.py folders-amber
+```
